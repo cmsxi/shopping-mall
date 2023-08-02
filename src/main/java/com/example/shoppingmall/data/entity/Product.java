@@ -5,6 +5,7 @@ import jakarta.persistence.*;
 import lombok.*;
 
 @Entity
+@NoArgsConstructor
 @Getter
 @Setter
 @ToString// (exclude="", "") // exclude한 값을 제외하고 출력을 할 수 있음
@@ -30,7 +31,18 @@ public class Product {
     @Column(nullable = false)
     private String brand;
 
+    @Enumerated(value=EnumType.STRING)
     @Column
     private Soldout isSoldout;
 
+    @Builder
+    public Product(Integer productID, String productName, String productDetail, Integer price, Integer stock, String brand, Soldout isSoldout) {
+        this.productID = productID;
+        this.productName = productName;
+        this.productDetail = productDetail;
+        this.price = price;
+        this.stock = stock;
+        this.brand = brand;
+        this.isSoldout = isSoldout;
+    }
 }

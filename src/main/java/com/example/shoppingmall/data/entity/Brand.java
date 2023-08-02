@@ -1,5 +1,5 @@
-package com.example.shoppingmall.data.entity;
-
-public class Brand {
-
-}
+//package com.example.shoppingmall.data.entity;
+//
+//public class Brand {
+//
+//}
